@@ -1,0 +1,30 @@
+.l-page {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2rem;
+}
+
+.l-twoColumn {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+
+  gap: 2rem;
+}
+
+@media all and (max-width: 37em) {
+  .l-twoColumn {
+    grid-template-columns: 1fr;
+  }
+
+  .l-twoColumn__sidebar {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .l-twoColumn__main {
+    grid-column: 1;
+    grid-row: 2;
+  }
+}

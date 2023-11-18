@@ -1,0 +1,59 @@
+<%= tag.tr(
+  role: "row",
+  class: class_names(
+    "Table__row",
+    "Table__row--highlight" => album == @new_album
+  )
+) do %>
+  <td role="cell" class="Table__cell Album">
+    <span aria-hidden="true" class="Table__cellHeader">
+      Artist
+    </span>
+    <%= album.artist %>
+  </td>
+  <td role="cell" class="Table__cell Name">
+    <span aria-hidden="true" class="Table__cellHeader">
+      Artist
+    </span>
+    <%= album.name %>
+  </td>
+  <td role="cell" class="Table__cell ReleaseDate">
+    <span aria-hidden="true" class="Table__cellHeader">
+      Release Date
+    </span>
+    <%= album.release_date %>
+  </td>
+  <td role="cell" class="Table__cell Sales">
+    <span aria-hidden="true" class="Table__cellHeader">
+      Sales
+    </span>
+    <%= number_with_delimiter(album.sales) %>
+  </td>
+  <td role="cell" class="Table__cell Stars">
+    <span aria-hidden="true" class="Table__cellHeader">
+      Stars
+    </span>
+    <%= album.stars %>
+  </td>
+  <td role="cell" class="Table__actions Actions">
+    <%= link_to(
+      "Edit",
+      edit_album_path(album),
+      class: class_names(
+        "c-button",
+        "c-button c-button--inverted" => album == @new_album
+      ),
+      data: { turbo_frame: "album_form" }
+    ) %>
+    <%= button_to(
+      album_path(album),
+      method: :delete,
+      class: "c-button c-button--destructive",
+      data: {
+        turbo_confirm: "Are you sure you want to delete \"#{album.name}\" by #{album.artist}"
+      }
+    ) do %>
+      Delete
+    <% end %>
+  </td>
+<% end %>

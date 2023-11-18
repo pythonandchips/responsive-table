@@ -1,0 +1,44 @@
+<div class="c-card">
+  <div class="c-card__header">
+    <h2>Really good albums</h2>
+  </div>
+  <div class="c-card__row">
+    <table class="Table" role="table">
+      <thead role="rowgroup" class="Table__header">
+        <tr role="row" class="Table__headerRow">
+          <th role="columnheader" class="Table__headerCell">
+            <%= render(OrderLinkComponent.new(:artist)) %>
+          </th>
+          <th role="columnheader" class="Table__headerCell">
+            <%= render(OrderLinkComponent.new(:name, as: "Album")) %>
+          </th>
+          <th role="columnheader" class="Table__headerCell">
+            <%= render(OrderLinkComponent.new(:release_date)) %>
+          </th>
+          <th role="columnheader" class="Table__headerCell">
+            <%= render(OrderLinkComponent.new(:sales)) %>
+          </th>
+          <th role="columnheader" class="Table__headerCell">
+            <%= render(OrderLinkComponent.new(:stars)) %>
+          </th>
+          <th role="columnheader" class="Table__headerCell"></th>
+        </tr>
+      </thead>
+      <tbody role="rowgroup" class="Table__body">
+        <% if @new_album && !@albums.include?(@new_album) %>
+          <%= render partial: "album", locals: { album: @new_album } %>
+        <% end %>
+        <% @albums.take(5).each do |album| %>
+          <%= render partial: "album", locals: { album: } %>
+        <% end %>
+      </tbody>
+      <tfoot class="Table__footer">
+        <tr class="Table__footerRow">
+          <td class="Table__footerCell" colspan="5">
+            <%= paginate @albums %>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</div>

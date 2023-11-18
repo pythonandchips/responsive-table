@@ -1,0 +1,16 @@
+.c-modal {
+  background-color: var(--color-blue);
+
+  border: 2px solid var(--color-yellow);
+  border-radius: var(--border-radius--normal);
+}
+
+.c-modal__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.c-modal__body {
+  color: var(--color-yellow);
+}

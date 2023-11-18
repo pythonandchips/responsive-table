@@ -4,5 +4,5 @@
 
 import { application } from "./application"
 
-import HelloController from "./hello_controller"
-application.register("hello", HelloController)
+import FrameScrollOnLoadController from "./frame_scroll_on_load_controller"
+application.register("frame-scroll-on-load", FrameScrollOnLoadController)

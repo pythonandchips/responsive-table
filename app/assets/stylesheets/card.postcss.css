@@ -1,0 +1,19 @@
+.c-card {
+  border: 1px solid var(--color-yellow);
+  border-radius: var(--border-radius--normal);
+  height: fit-content;
+}
+
+.c-card__header {
+  padding: 0.5rem;
+
+  border-bottom: 1px solid var(--color-yellow);
+}
+
+.c-card__header h2 {
+  margin: 0;
+}
+
+.c-card__row {
+  padding: 0.5rem;
+}

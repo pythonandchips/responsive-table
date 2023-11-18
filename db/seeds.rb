@@ -1,9 +1,37 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+# frozen_string_literal: true
+
+Album.create!(
+  artist: "R.E.M",
+  name: "Automatic for the People",
+  release_date: Date.new(1992, 10, 5),
+  sales: 2_270_332,
+  stars: 5
+)
+Album.new(
+  artist: "Jeff Buckley",
+  name: "Grace",
+  release_date: Date.new(1994, 8, 23),
+  sales: 600_000,
+  stars: 4
+)
+Album.create!(
+  artist: "Nick Cave and the Bad Seeds",
+  name: "Boatman's Call (The)",
+  release_date: Date.new(1997, 3, 3),
+  sales: 100_000,
+  stars: 4.5
+)
+Album.create!(
+  artist: "Garbage",
+  name: "Version 2.0",
+  release_date: Date.new(1998, 5, 11),
+  sales: 579_912,
+  stars: 4
+)
+Album.create!(
+  artist: "Blur",
+  name: "Parklife",
+  release_date: Date.new(1994, 4, 25),
+  sales: 1_143_785,
+  stars: 5
+)

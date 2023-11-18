@@ -1,0 +1,21 @@
+.c-pagination {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.c-pagination__gap {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  color: var(--color-yellow);
+  border: 1px solid var(--color-yellow);
+}
+
+.c-pagination__current {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: var(--color-yellow);
+  color: var(--color-blue);
+  border: 1px solid var(--color-yellow);
+}

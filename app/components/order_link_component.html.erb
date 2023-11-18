@@ -1,0 +1,16 @@
+<%= link_to(
+  albums_path(order: attr, direction: order_direction(params[:direction])),
+  class: class_names("OrderLink", "OrderLink--reverse" => params[:direction] == "desc"),
+  data: { turbo_action: "advance" }
+) do %>
+  <% if as %>
+    <%= as %>
+  <% else %>
+    <%= attr.humanize %>
+  <% end %>
+  <% if ordered_by_attr? %>
+    <svg viewBox="0 0 24 24">
+      <path d="M3 19h18a1.002 1.002 0 0 0 .823-1.569l-9-13c-.373-.539-1.271-.539-1.645 0l-9 13A.999.999 0 0 0 3 19z"></path>
+    </svg>
+  <% end %>
+<% end %>

@@ -1,1 +1,14 @@
 /* Entry point for your PostCSS build */
+
+@import "normalize.css";
+@import "./colours.postcss.css";
+@import "./default.postcss.css";
+@import "./page.postcss.css";
+@import "./table.postcss.css";
+
+@import "./modal.postcss.css";
+@import "./card.postcss.css";
+@import "./form.postcss.css";
+@import "./button.postcss.css";
+
+@import "./pagination.postcss.css";

@@ -1,0 +1,11 @@
+*, *:before, *:after {
+box-sizing: border-box;
+font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+  background-color: var(--color-blue);
+  margin: 1rem;
+  color: var(--color-yellow);
+}
+

@@ -66,3 +66,11 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "view_component", "~> 3.7"
+
+gem "rspec-rails", "~> 6.0"
+
+gem "kaminari", "~> 1.2"
+
+gem "active_record-union_relation", "~> 0.1.1"

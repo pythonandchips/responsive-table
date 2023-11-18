@@ -1,0 +1,10 @@
+:root {
+  --color-blue: #094074;
+  --color-blue-light: #235585;
+  --color-blue-lightest: #3C6997;
+  --color-yellow: #FFDD4A;
+  --color-yellow--light: #FFEC98;
+  --color-red: #DB2955;
+
+  --border-radius--normal: 5px;
+}

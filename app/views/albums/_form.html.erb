@@ -1,0 +1,80 @@
+<%= turbo_frame_tag(
+  "album_form",
+  data: {
+    controller: "frame-scroll-on-load",
+    action: "turbo:frame-render->frame-scroll-on-load#scrollIntoView"
+  }
+) do %>
+  <div class="c-card">
+    <div class="c-card__header">
+      <% if @album.persisted?  %>
+        <h2>Edit <%= @album.name %>
+      <% else %>
+        <h2>New Album</h2>
+      <% end %>
+    </div>
+    <div class="c-card__row">
+      <%= form_with(
+        model: @album,
+        class: "c-form",
+        data: {
+          turbo_frame: "albums"
+        }
+      ) do |form| %>
+        <div class="c-form__field">
+          <%= form.label :artist %>
+          <%= form.text_field :artist %>
+          <% if @album.errors.has_key?(:artist) %>
+            <span class="c-form__error">
+              <%= @album.errors.messages_for(:artist).to_sentence %>
+            </span>
+          <% end %>
+        </div>
+        <div class="c-form__field">
+          <%= form.label :name %>
+          <%= form.text_field :name%>
+          <% if @album.errors.has_key?(:name) %>
+            <span class="c-form__error">
+              <%= @album.errors.messages_for(:name).to_sentence %>
+            </span>
+          <% end %>
+        </div>
+        <div class="c-form__field">
+          <%= form.label :release_date %>
+          <%= form.date_field :release_date %>
+          <% if @album.errors.has_key?(:release_date) %>
+            <span class="c-form__error">
+              <%= @album.errors.messages_for(:release_date).to_sentence %>
+            </span>
+          <% end %>
+        </div>
+        <div class="c-form__field">
+          <%= form.label :stars %>
+          <%= form.number_field :stars, step: 0.5, min: 0, max: 5 %>
+          <% if @album.errors.has_key?(:stars) %>
+            <span class="c-form__error">
+              <%= @album.errors.messages_for(:stars).to_sentence %>
+            </span>
+          <% end %>
+        </div>
+        <div class="c-form__field">
+          <%= form.label :sales %>
+          <%= form.number_field :sales, step: 1, min: 0 %>
+          <% if @album.errors.has_key?(:sales) %>
+            <span class="c-form__error">
+              <%= @album.errors.messages_for(:sales).to_sentence %>
+            </span>
+          <% end %>
+        </div>
+        <div>
+          <%= form.button(class: "c-button c-button--primary") %>
+          <% if @album.persisted? %>
+            <%= link_to("Cancel", new_album_path, class: "c-button") %>
+          <% else %>
+            <%= link_to("Reset", new_album_path, class: "c-button") %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>

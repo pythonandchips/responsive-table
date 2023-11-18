@@ -1,0 +1,17 @@
+<main class="l-page">
+  <header class="l-page__header">
+    <h1>Responsive table</h1>
+  </header>
+
+  <%= turbo_frame_tag "albums" do %>
+    <div class="l-twoColumn">
+      <div class="l-twoColumn__main">
+        <%= render partial: "list" %>
+      </div>
+
+      <div class="l-twoColumn__sidebar">
+        <%= render partial: "form" %>
+      </div>
+    </div>
+  <% end %>
+</main>
