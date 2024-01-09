@@ -144,6 +144,7 @@ GEM
     minitest (5.20.0)
     msgpack (1.7.2)
     mutex_m (0.2.0)
+    mysql2 (0.5.5)
     net-imap (0.4.4)
       date
       net-protocol
@@ -158,9 +159,10 @@ GEM
       racc (~> 1.4)
     nokogiri (1.15.4-arm64-darwin)
       racc (~> 1.4)
+    nokogiri (1.15.4-x86_64-darwin)
+      racc (~> 1.4)
     nokogiri (1.15.4-x86_64-linux)
       racc (~> 1.4)
-    pg (1.5.4)
     propshaft (0.8.0)
       actionpack (>= 7.0.0)
       activesupport (>= 7.0.0)
@@ -271,6 +273,7 @@ GEM
 PLATFORMS
   aarch64-linux
   arm64-darwin-22
+  x86_64-darwin-22
   x86_64-linux
 
 DEPENDENCIES
@@ -281,7 +284,7 @@ DEPENDENCIES
   debug
   jsbundling-rails
   kaminari (~> 1.2)
-  pg (~> 1.1)
+  mysql2
   propshaft
   puma (>= 5.0)
   rails (~> 7.1.1)
@@ -289,12 +292,11 @@ DEPENDENCIES
   selenium-webdriver
   stimulus-rails
   turbo-rails
-  tzinfo-data
   view_component (~> 3.7)
   web-console
 
 RUBY VERSION
-   ruby 3.2.0p0
+   ruby 3.2.2p53
 
 BUNDLED WITH
    2.4.21
